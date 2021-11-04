@@ -1,0 +1,331 @@
+.bestJewellery {
+    .container {
+        .bestJewellery__title {
+            font-family: 'Playfair Display - Regular';
+            line-height: 1.361;
+        }
+
+        .bestJewellery__text {
+            font-family: 'Roboto - Regular';
+            color: rgb(114, 114, 114);
+            line-height: 2.101;
+        }
+
+        .bestJewellery__carousel {
+            @include flexbox(none, space-between, center);
+            position: relative;
+
+            .slick-dots {
+                @include flexbox(none, none, none);
+                list-style: none;
+                position: absolute;
+
+                .slick-active {
+                    border-color: #838383;
+
+                    button {
+                        color: #838383;
+                    }
+                }
+
+                li {
+                    position: relative;
+                    transition: border-color .5s;
+                    border-bottom: 1px solid transparent;
+
+                    button {
+                        background-color: transparent;
+                        outline: none;
+                        border: none;
+                        font-family: 'Poppins - Regular';
+                        letter-spacing: .5px;
+                        cursor: pointer;
+                        color: rgba($color: #838383, $alpha: .5);
+                        transition: color .5s;
+
+                        &::before {
+                            content: "0";
+                        }
+                    }
+                }
+            }
+
+            .bestJewellery__item {
+                @include flexbox(none, center, center);
+
+                .bestJewellery__content {
+                    cursor: pointer;
+                    @include flexbox(column, none, center);
+                    background-color: #fff;
+                    box-shadow: 0px 5px 20px 0px rgba(0, 0, 0, 0.08);
+
+                    .bestJewellery__subtitle {
+                        font-family: 'Playfair Display - Regular';
+                        color: rgb(114, 114, 114);
+                    }
+                }
+            }
+        }
+    }
+}
+
+@media only screen and (min-width: 1210px) {
+    .bestJewellery {
+        background: url(../img/bestJewellery.png);
+        background-repeat: no-repeat;
+        background-size: auto auto;
+        background-position: right bottom;
+
+        .container {
+            @include flexbox(column, none, none);
+            padding-bottom: 70px;
+
+            .bestJewellery__title {
+                width: 400px;
+                padding-top: 120px;
+                padding-bottom: 50px;
+                font-size: 38px;
+            }
+
+            .bestJewellery__text {
+                font-size: 17px;
+                width: 615px;
+            }
+
+            .bestJewellery__carousel {
+                margin-left: -35px;
+                width: 700px;
+
+                .slick-dots {
+                    bottom: -10px;
+                    left: 35px;
+
+                    li {
+                        &:nth-child(n+2) {
+                            margin-left: 30px;
+                        }
+                    }
+                }
+
+                .bestJewellery__item {
+                    padding: 65px 0 50px 0;
+                    width: 200px;
+
+                    .bestJewellery__content {
+                        width: 170px;
+
+                        .bestJewellery__img {
+                            height: 118px;
+
+                            img {
+                                width: auto;
+                                height: auto;
+                            }
+                        }
+
+                        .bestJewellery__subtitle {
+                            padding: 20px 0;
+                            font-size: 17px;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+@media only screen and (max-width: 1209px) and (min-width: 1050px) {
+    .bestJewellery {
+        background: url(../img/bestJewellery.png);
+        background-repeat: no-repeat;
+        background-size: auto auto;
+        background-position: right bottom;
+
+        .container {
+            @include flexbox(column, none, none);
+            padding-bottom: 70px;
+            padding-left: 20px;
+
+            .bestJewellery__title {
+                width: 400px;
+                padding-top: 120px;
+                padding-bottom: 50px;
+                font-size: 38px;
+            }
+
+            .bestJewellery__text {
+                font-size: 17px;
+                width: 500px;
+            }
+
+            .bestJewellery__carousel {
+                margin-left: -35px;
+                width: 700px;
+
+                .slick-dots {
+                    bottom: -10px;
+                    left: 35px;
+
+                    li {
+                        &:nth-child(n+2) {
+                            margin-left: 30px;
+                        }
+                    }
+                }
+
+                .bestJewellery__item {
+                    padding: 65px 0 50px 0;
+                    width: 200px;
+
+                    .bestJewellery__content {
+                        width: 170px;
+
+                        .bestJewellery__img {
+                            height: 118px;
+
+                            img {
+                                width: auto;
+                                height: auto;
+                            }
+                        }
+
+                        .bestJewellery__subtitle {
+                            padding: 20px 0;
+                            font-size: 17px;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+@media only screen and (max-width: 1049px) and (min-width: 750px) {
+    .bestJewellery {
+        .container {
+            @include flexbox(column, none, center);
+            padding-bottom: 70px;
+            padding-left: 20px;
+            padding-right: 20px;
+
+            .bestJewellery__title {
+                width: auto;
+                padding-top: 120px;
+                padding-bottom: 50px;
+                font-size: 38px;
+                text-align: center;
+            }
+
+            .bestJewellery__text {
+                text-align: center;
+                font-size: 17px;
+                width: auto;
+            }
+
+            .bestJewellery__carousel {
+                width: 100%;
+
+                .slick-dots {
+                    bottom: -10px;
+                    left: 35px;
+
+                    li {
+                        &:nth-child(n+2) {
+                            margin-left: 30px;
+                        }
+                    }
+                }
+
+                .bestJewellery__item {
+                    padding: 65px 0 50px 0;
+                    width: 200px;
+
+                    .bestJewellery__content {
+                        width: 170px;
+
+                        .bestJewellery__img {
+                            height: 118px;
+
+                            img {
+                                width: auto;
+                                height: auto;
+                            }
+                        }
+
+                        .bestJewellery__subtitle {
+                            padding: 20px 0;
+                            font-size: 17px;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+@media only screen and (max-width: 749px) {
+    .bestJewellery {
+        .container {
+            @include flexbox(column, none, center);
+            padding-bottom: calc(.5em + 4vw);
+            padding-left: calc(.3em + 2vw);
+            padding-right: calc(.3em + 2vw);
+
+            .bestJewellery__title {
+                width: auto;
+                padding-top: calc(.5em + 4vw);
+                padding-bottom: calc(.5em + 4vw);
+                font-size: calc(.4em + 5vw);
+                text-align: center;
+            }
+
+            .bestJewellery__text {
+                text-align: center;
+                font-size: calc(.2em + 2vw);
+                width: auto;
+            }
+
+            .bestJewellery__carousel {
+                width: 100%;
+
+                .slick-dots {
+                    bottom: -10px;
+                    left: 35px;
+
+                    li {
+                        &:nth-child(n+2) {
+                            margin-left: calc(.1em + 2vw);
+                        }
+
+                        button {
+                            font-size: calc(.3em + 2vw);
+                        }
+                    }
+                }
+
+                .bestJewellery__item {
+                    padding: calc(.5em + 3vw) 0 calc(.5em + 3vw) 0;
+                    width: 200px;
+
+                    .bestJewellery__content {
+                        width: 170px;
+
+                        .bestJewellery__img {
+                            height: 118px;
+
+                            img {
+                                width: auto;
+                                height: auto;
+                            }
+                        }
+
+                        .bestJewellery__subtitle {
+                            padding: 20px 0;
+                            font-size: calc(.3em + 2vw);
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

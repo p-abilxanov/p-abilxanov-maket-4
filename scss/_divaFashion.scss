@@ -1,0 +1,178 @@
+.divaFashion {
+    width: 100%;
+    position: relative;
+    @include flexbox(none, center, center);
+
+    &::after {
+        content: "";
+        display: block;
+        width: 100%;
+        height: 1px;
+        position: absolute;
+        top: 0;
+        background-color: rgb(241, 241, 241);
+    }
+
+    .container {
+        .divaFashion__content {
+            width: 100%;
+            @include flexbox(column, none, none);
+
+            .divaFashion__title {
+                font-family: 'Playfair Display - Regular';
+            }
+
+            .divaFashion__text {
+                font-family: 'Roboto - Regular';
+                color: rgb(114, 114, 114);
+                line-height: 2.101;
+            }
+
+            .divaFashion__btn {
+                align-self: flex-start;
+
+                a {
+                    color: rgb(245, 122, 125);
+                }
+
+                svg {
+                    polygon {
+                        stroke: rgb(245, 122, 125);
+                    }
+                }
+            }
+        }
+    }
+}
+
+@media only screen and (min-width: 1160px) {
+    .divaFashion {
+        background: url(../img/divaFashion.png);
+        background-repeat: no-repeat;
+        background-size: auto auto;
+        background-position: -300px 0;
+
+        .divaFashion__border {
+            position: absolute;
+            top: -42px;
+        }
+
+        .container {
+            @include flexbox(none, flex-end, none);
+            padding-bottom: 100px;
+
+            .divaFashion__content {
+                width: 630px;
+
+                .divaFashion__title {
+                    padding-top: 135px;
+                    padding-bottom: 70px;
+                    padding-right: 200px;
+                    font-size: 38px;
+                }
+
+                .divaFashion__text {
+                    font-size: 17px;
+                    padding-bottom: 95px;
+                }
+            }
+        }
+    }
+}
+
+@media only screen and (max-width: 1159px) and (min-width: 1045px) {
+    .divaFashion {
+        background: url(../img/divaFashion.png);
+        background-repeat: no-repeat;
+        background-size: 600px auto;
+        background-position: -150px 0;
+
+        .divaFashion__border {
+            position: absolute;
+            top: -42px;
+        }
+
+        .container {
+            @include flexbox(none, flex-end, none);
+            padding-bottom: 100px;
+
+            .divaFashion__content {
+                width: 630px;
+
+                .divaFashion__title {
+                    padding-top: 135px;
+                    padding-bottom: 70px;
+                    padding-right: 200px;
+                    font-size: 38px;
+                }
+
+                .divaFashion__text {
+                    font-size: 17px;
+                    padding-bottom: 95px;
+                }
+            }
+        }
+    }
+}
+
+@media only screen and (max-width: 1044px) and (min-width: 750px) {
+    .divaFashion {
+        .divaFashion__border {
+            position: absolute;
+            top: -42px;
+        }
+
+        .container {
+            @include flexbox(none, center, none);
+            padding-bottom: calc(.3em + 3vw);
+
+            .divaFashion__content {
+                padding: 0 calc(.5em + 4vw);
+
+                .divaFashion__title {
+                    padding-top: calc(.5em + 5vw);
+                    padding-bottom: calc(.3em + 3vw);
+                    text-align: center;
+                    font-size: 38px;
+                }
+
+                .divaFashion__text {
+                    font-size: 17px;
+                    padding-bottom: calc(.3em + 3vw);
+                }
+            }
+        }
+    }
+}
+
+
+@media only screen and (max-width: 749px) {
+    .divaFashion {
+        .divaFashion__border {
+            display: none;
+        }
+
+        .container {
+            @include flexbox(none, center, center);
+            padding-bottom: calc(.3em + 3vw);
+
+            .divaFashion__content {
+                @include flexbox(column, none, center);
+                padding: 0 calc(.1em + 2vw);
+
+                .divaFashion__title {
+                    padding-top: calc(.3em + 3vw);
+                    padding-bottom: calc(.3em + 3vw);
+                    text-align: center;
+                    font-size: calc(.4em + 5vw);
+                }
+
+                .divaFashion__text {
+                    font-size: calc(.2em + 2vw);
+                    text-align: center;
+                    padding-bottom: calc(.3em + 3vw);
+                }
+            }
+        }
+    }
+}

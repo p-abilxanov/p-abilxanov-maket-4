@@ -1,0 +1,122 @@
+@import 'fonts';
+@import 'variables';
+@import 'mixins';
+
+*,
+*::before,
+*::after {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body {
+    @include blockSize(100%, auto);
+}
+
+.wrapper {
+    @include blockSize(100%, auto);
+
+    @media only screen and (min-width: 1190px) {
+        .container {
+            @include blockSize(1170px, auto);
+            margin: 0 auto;
+        }
+    }
+
+    @media only screen and (max-width: 1189px) {
+        .container {
+            @include blockSize(100%, auto);
+        }
+    }
+
+    .view-collectionBtn {
+        @include flexbox(none, center, center);
+        position: relative;
+
+        a {
+            font-family: 'Poppins - SemiBold';
+            text-transform: uppercase;
+            text-decoration: none;
+
+            i {
+                padding-right: 20px;
+            }
+        }
+
+        svg:hover {
+            polygon {
+                stroke-dasharray: 720 720;
+            }
+        }
+
+        svg {
+            z-index: 2;
+            width: 300px;
+            height: 60px;
+            cursor: pointer;
+
+            polygon {
+                fill: none;
+                transition: stroke-dasharray 1s;
+                stroke-width: 2px;
+                stroke-dasharray: 400 720;
+            }
+        }
+    }
+
+    @media only screen and (min-width: 750px) {
+        .view-collectionBtn {
+            a {
+                position: absolute;
+                font-size: 18px;
+
+                i {
+                    padding-right: 20px;
+                }
+            }
+        }
+    }
+
+    @media only screen and (max-width: 749px) {
+        .view-collectionBtn {
+            a {
+                position: absolute;
+                font-size: calc(.2em + 1.5vw);
+
+                i {
+                    display: none;
+                    padding-right: 0;
+                }
+            }
+
+            svg {
+                transform: scale(calc(.6), calc(.6));
+            }
+        }
+    }
+}
+
+// firstPage style
+@import 'firstPage';
+
+// newArrivels style
+@import 'newArrivels';
+
+// gallery style
+@import 'gallery';
+
+// divaFashion style
+@import 'divaFashion';
+
+// bestJewellery style
+@import 'bestJewellery';
+
+// blogUpdates style
+@import 'blogUpdates';
+
+// address style
+@import 'address';
+
+// footer style
+@import 'footer';

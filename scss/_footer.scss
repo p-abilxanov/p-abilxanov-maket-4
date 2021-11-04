@@ -1,0 +1,383 @@
+.footer {
+    .container {
+        @include flexbox(column, none, center);
+
+        .footer__navigation {
+            border-bottom: 1px solid #eee;
+
+            .footer__title {
+                font-family: 'Playfair Display - Regular';
+                color: rgb(94, 93, 93);
+            }
+
+            .shop__now {
+                @include flexbox(column, none, none);
+
+                .shopNow__menu {
+                    @include flexbox(none, none, none);
+                }
+            }
+
+            .about__us {
+                .aboutUs__menu {
+                    @include flexbox(none, none, none);
+
+                    .social__menu {
+                        li {
+                            @for $i from 1 through 5 {
+                                &:nth-child(#{$i}) {
+                                    a:hover {
+
+                                        span,
+                                        i {
+                                            color: nth($socialIconColor, $i);
+                                        }
+                                    }
+                                }
+                            }
+
+                            a {
+
+                                i,
+                                span {
+                                    transition: color .5s;
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+
+            ul {
+                list-style: none;
+
+                li {
+                    a {
+                        text-decoration: none;
+                        font-family: 'Roboto - Regular';
+                        color: rgb(93, 93, 93);
+
+                    }
+                }
+            }
+        }
+
+        .footer__license {
+            width: 100%;
+            @include flexbox(none, space-between, none);
+
+            .bank__card {
+                ul {
+                    @include flexbox(none, none, none);
+                    list-style: none;
+
+                    li {
+                        @for $i from 1 through 5 {
+                            &:nth-child(#{$i}):hover {
+                                a {
+                                    i {
+                                        color: nth($socialIconColor, $i);
+                                    }
+                                }
+                            }
+                        }
+
+                        a {
+                            i {
+                                color: #ccc;
+                                transition: color .5s;
+                            }
+                        }
+                    }
+                }
+            }
+
+            .footer__copyright {
+                font-family: 'Roboto - Regular';
+                color: rgb(93, 93, 93);
+            }
+        }
+    }
+}
+
+@media only screen and (min-width: 1160px) {
+    .footer {
+        .container {
+            padding-top: 95px;
+
+            .footer__navigation {
+                @include flexbox(none, none, none);
+                padding-left: 30px;
+                padding-bottom: 70px;
+
+                .footer__title {
+                    padding-bottom: 40px;
+                    font-size: 22px;
+                }
+
+                .shop__now {
+                    .shopNow__menu {
+                        ul {
+                            &:nth-child(2) {
+                                padding-left: 130px;
+                            }
+                        }
+                    }
+                }
+
+                .about__us {
+                    padding-left: 150px;
+
+                    .aboutUs__menu {
+                        ul {
+                            &:nth-child(2) {
+                                padding-left: 140px;
+                            }
+                        }
+
+                        .social__menu {
+                            padding-left: 110px;
+
+                            li {
+                                a {
+                                    i {
+                                        padding-right: 20px;
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+
+                ul {
+                    li {
+                        padding: 15px 0;
+
+                        a {
+                            font-size: 15.5px;
+                        }
+                    }
+                }
+
+            }
+
+            .footer__license {
+                padding-left: 30px;
+                padding-top: 45px;
+                padding-bottom: 40px;
+
+                .bank__card {
+                    ul {
+                        li {
+                            &:nth-child(n + 2) {
+                                padding-left: 20px;
+                            }
+
+                            a {
+                                i {
+                                    font-size: 26px;
+                                }
+                            }
+                        }
+                    }
+                }
+
+                .footer__copyright {
+                    font-size: 15px;
+                }
+            }
+        }
+    }
+}
+
+@media only screen and (max-width: 1159px) and (min-width: 820px) {
+    .footer {
+        .container {
+            padding-top: 95px;
+
+            .footer__navigation {
+                width: 100%;
+                @include flexbox(none, space-evenly, none);
+                padding-left: 15px;
+                padding-bottom: 70px;
+
+                .footer__title {
+                    padding-bottom: 40px;
+                    font-size: 22px;
+                }
+
+                .shop__now {
+                    .shopNow__menu {
+                        ul {
+                            &:nth-child(2) {
+                                padding-left: 50px;
+                            }
+                        }
+                    }
+                }
+
+                .about__us {
+                    padding-left: 50px;
+
+                    .aboutUs__menu {
+                        ul {
+                            &:nth-child(2) {
+                                padding-left: 50px;
+                            }
+                        }
+
+                        .social__menu {
+                            padding-left: 50px;
+
+                            li {
+                                a {
+                                    i {
+                                        padding-right: 20px;
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+
+                ul {
+                    li {
+                        padding: 15px 0;
+
+                        a {
+                            font-size: 15.5px;
+                        }
+                    }
+                }
+
+            }
+
+            .footer__license {
+                padding: 45px 15px 40px 15px;
+
+                .bank__card {
+                    ul {
+                        li {
+                            &:nth-child(n + 2) {
+                                padding-left: 10px;
+                            }
+
+                            a {
+                                i {
+                                    font-size: 26px;
+                                }
+                            }
+                        }
+                    }
+                }
+
+                .footer__copyright {
+                    font-size: 15px;
+                }
+            }
+        }
+    }
+}
+
+@media only screen and (max-width: 819px) {
+    .footer {
+        .container {
+            padding-top: calc(.7em + 7vw);
+
+            .footer__navigation {
+                width: 80%;
+                @include flexbox(column, none, none);
+                padding-bottom: calc(.3em + 5vw);
+
+                .footer__title {
+                    text-align: center;
+                    padding-bottom: calc(.3em + 5vw);
+                    font-size: calc(.3em + 3vw);
+                }
+
+                .shop__now {
+                    .shopNow__menu {
+                        @include flexbox(none, space-evenly, none);
+
+                        ul {
+                            &:nth-child(2) {
+                                padding-left: calc(.3em + 5vw);
+                            }
+                        }
+                    }
+                }
+
+                .about__us {
+                    padding-top: 30px;
+
+                    .aboutUs__menu {
+                        @include flexbox(none, space-between, none);
+
+                        ul {
+                            &:nth-child(2) {
+                                padding-left: calc(.3em + 5vw);
+                            }
+                        }
+
+                        .social__menu {
+                            padding-left: calc(.3em + 5vw);
+
+                            li {
+                                a {
+                                    i {
+                                        padding-right: calc(.2em + 2vw);
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+
+                ul {
+                    li {
+                        padding: calc(.2em + 2vw) 0;
+
+                        a {
+                            font-size: calc(.2em + 1.5vw);
+                        }
+                    }
+                }
+
+            }
+
+            .footer__license {
+                padding: calc(.3em + 3vw) calc(.2em + 2vw);
+
+                .bank__card {
+                    ul {
+                        li {
+                            &:nth-child(n + 2) {
+                                padding-left: calc(.2em + 2vw);
+                            }
+
+                            a {
+                                i {
+                                    font-size: calc(.5em + 3vw);
+                                }
+                            }
+                        }
+                    }
+                }
+
+                .footer__copyright {
+                    font-size: calc(.2em + 2vw);
+                }
+            }
+        }
+    }
+}
+
+@media only screen and (max-width: 400px) {
+    .footer__license {
+        @include flexbox(column, none, center);
+
+        .footer__copyright {
+            padding-top: calc(.3em + 3vw);
+        }
+    }
+}

@@ -1,0 +1,205 @@
+.address {
+    @include flexbox(column, none, center);
+    position: relative;
+    background: url(../img/nextBgImg.png);
+    background-size: auto 100%;
+    background-position: center center;
+    background-repeat: no-repeat;
+
+    .container {
+        @include flexbox(column, none, center);
+
+        .address__title {
+            font-family: 'Poppins - SemiBold';
+            color: rgb(255, 255, 255);
+            text-align: center;
+        }
+
+        .address__subtitle {
+            font-family: 'Playfair Display - Regular';
+            color: rgb(197, 197, 197);
+            text-align: center;
+        }
+
+        .address__text {
+            font-family: 'Playfair Display - Regular';
+            color: rgb(197, 197, 197);
+            text-align: center;
+        }
+
+        .address__number {
+            cursor: pointer;
+            @include flexbox(none, none, center);
+            color: rgb(197, 197, 197);
+            text-align: center;
+
+            span {
+                @include blockSize(30px, 30px);
+                @include flexbox(none, center, center);
+                background-color: rgba($color: #fff, $alpha: .5);
+                border-radius: 50%;
+                margin-right: 6px;
+
+                i {
+                    font-size: 14px;
+                    transform: rotateZ(90deg);
+                }
+            }
+        }
+    }
+
+    .newsletter {
+        position: absolute;
+
+        form {
+            box-shadow: 0px 5px 40px 0px rgba(0, 0, 0, 0.14);
+            position: relative;
+            @include flexbox(none, none, none);
+
+            input {
+                height: 100%;
+                font-family: 'Roboto - Regular';
+                color: rgb(132, 132, 132);
+            }
+
+            label {
+                height: 100%;
+                position: absolute;
+                @include flexbox(none, center, center);
+
+                img {
+                    width: auto;
+                    height: auto;
+                }
+            }
+
+            button {
+                height: 100%;
+                cursor: pointer;
+                @include flexbox(none, center, center);
+                background-color: rgb(245, 122, 125);
+                font-family: 'Poppins - SemiBold';
+                color: rgb(255, 255, 255);
+                text-transform: uppercase;
+            }
+        }
+    }
+}
+
+@media only screen and (min-width: 750px) {
+    .address {
+        &::before {
+            content: url(../img/__diamondIcon.png);
+            position: absolute;
+            top: -41px;
+        }
+
+        .container {
+            padding-bottom: 73px;
+
+            .address__title {
+                padding-top: 70px;
+                padding-bottom: 25px;
+                font-size: 30px;
+            }
+
+            .address__subtitle {
+                font-size: 22px;
+            }
+
+            .address__text {
+                padding-top: 13px;
+                padding-bottom: 25px;
+                font-size: 22px;
+
+                span {
+                    font-size: 20px;
+                }
+            }
+
+            .address__number {
+                font-size: 15px;
+            }
+        }
+
+        .newsletter {
+            bottom: calc(-63px / 2);
+
+            form {
+                height: 63px;
+
+                input {
+                    width: 490px;
+                    padding-left: 70px;
+                    font-size: 16px;
+                }
+
+                label {
+                    width: 70px;
+                }
+
+                button {
+                    padding: 0 40px;
+                    font-size: 15px;
+                }
+            }
+        }
+    }
+}
+
+@media only screen and (max-width: 749px) {
+    .address {
+        .container {
+            padding-bottom: calc(.7em + 7vw);
+
+            .address__title {
+                padding-top: calc(.4em + 5vw);
+                padding-bottom: calc(.4em + 3vw);
+                font-size: calc(.4em + 5vw);
+            }
+
+            .address__subtitle {
+                font-size: calc(.3em + 2vw);
+            }
+
+            .address__text {
+                padding-top: calc(.2em + 2vw);
+                padding-bottom: calc(.3em + 2vw);
+                font-size: calc(.3em + 2vw);
+
+                span {
+                    font-size: calc(.3em + 1.5vw);
+                }
+            }
+
+            .address__number {
+                font-size: calc(.2em + 2vw);
+            }
+        }
+
+        .newsletter {
+            width: 80%;
+            bottom: calc((-1em - 10vw) / 2);
+
+            form {
+                width: 100%;
+                height: calc(1em + 10vw);
+
+                input {
+                    width: 70%;
+                    padding-left: calc(.2em + 2vw);
+                    font-size: calc(.2em + 2vw);
+                }
+
+                label {
+                    display: none;
+                }
+
+                button {
+                    width: 30%;
+                    font-size: calc(.2em + 2vw);
+                }
+            }
+        }
+    }
+}
